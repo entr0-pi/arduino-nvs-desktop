@@ -50,3 +50,6 @@ nvstest-results/
 Thumbs.db
 desktop.ini
 nul
+
+# Stray compiler output
+*.o
