@@ -1,0 +1,10 @@
+key,type,encoding,value
+wifi,namespace,,
+ssid,data,string,
+pass,data,string,
+dhcp,data,u8,0
+ip,data,string,
+gw,data,string,
+subnet,data,string,
+dns,data,string,
+accesspoint,data,u8,

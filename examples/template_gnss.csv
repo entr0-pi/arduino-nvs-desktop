@@ -1,0 +1,5 @@
+key,type,encoding,value
+gnss,namespace,,
+rx_pin,data,i32,
+tx_pin,data,i32,
+baud,data,u32,

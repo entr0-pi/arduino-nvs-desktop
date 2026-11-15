@@ -47,3 +47,26 @@ tasks:
     cmds:
       - task: common:setup:docker
 
+  build:all:
+    summary: Builds Windows (amd64), Linux (amd64) and macOS (amd64, arm64) into bin/
+    desc: |
+      Uses the official Wails cross-compilation: native Go for Windows, the
+      wails-cross Docker image for Linux and macOS (run setup:docker once).
+    cmds:
+      # windows:build always writes bin/<app>.exe, so rename it.
+      # Task's shell has no mv on Windows: use PowerShell there.
+      - task: windows:build
+        vars: { ARCH: amd64 }
+      - cmd: powershell Move-Item -Force "{{.BIN_DIR}}/{{.APP_NAME}}.exe" "{{.BIN_DIR}}/{{.APP_NAME}}-windows-amd64.exe"
+        platforms: [windows]
+      - cmd: mv -f "{{.BIN_DIR}}/{{.APP_NAME}}.exe" "{{.BIN_DIR}}/{{.APP_NAME}}-windows-amd64.exe"
+        platforms: [linux, darwin]
+      - task: linux:build
+        vars: { ARCH: amd64, OUTPUT: "{{.BIN_DIR}}/{{.APP_NAME}}-linux-amd64" }
+      # No Linux arm64: the wails-cross image compiles Linux with its own GCC,
+      # so arm64 would need an emulated arm64 copy of the image.
+      - task: darwin:build
+        vars: { ARCH: amd64, OUTPUT: "{{.BIN_DIR}}/{{.APP_NAME}}-darwin-amd64" }
+      - task: darwin:build
+        vars: { ARCH: arm64, OUTPUT: "{{.BIN_DIR}}/{{.APP_NAME}}-darwin-arm64" }
+

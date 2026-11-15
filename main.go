@@ -22,8 +22,10 @@ func main() {
 		Mac:         application.MacOptions{ApplicationShouldTerminateAfterLastWindowClosed: true},
 	})
 	win := app.Window.NewWithOptions(application.WebviewWindowOptions{
-		Title: "ESP32 NVS Key-Pair Manager", Width: 1280, Height: 800, MinWidth: 1024, MinHeight: 700,
+		Title: "ESP32 NVS Key-Pair Manager", Width: 1100, Height: 800, MinWidth: 1024, MinHeight: 700,
 		EnableFileDrop: true, BackgroundColour: application.NewRGB(12, 18, 29),
+		Frameless: true,
+		Windows:   application.WindowsWindow{Theme: application.Dark},
 	})
 	win.OnWindowEvent(events.Common.WindowFilesDropped, func(e *application.WindowEvent) {
 		app.Event.Emit("files:dropped", e.Context().DroppedFiles())

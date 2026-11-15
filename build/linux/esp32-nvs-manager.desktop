@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=esp32-nvs-manager
+Exec=esp32-nvs-manager
+Icon=esp32-nvs-manager
+Categories=Development;
+Terminal=false
+Keywords=wails
+Version=1.0
+StartupNotify=false

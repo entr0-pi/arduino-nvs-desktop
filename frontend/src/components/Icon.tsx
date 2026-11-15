@@ -9,6 +9,10 @@ export function Icon({name,size=20}:{name:string;size?:number}) {
     file:<><path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/></>,
     refresh:<><path d="M20 8a8 8 0 1 0 0 9M20 3v6h-6"/></>,
     arrow:<path d="M4 12h16m-6-6 6 6-6 6"/>,
+    minimize:<path d="M5 12h14"/>,
+    maximize:<rect x="5" y="5" width="14" height="14" rx="1.5"/>,
+    restore:<><path d="M9 5V3h12v12h-2"/><rect x="3" y="9" width="12" height="12" rx="1.5"/></>,
+    close:<path d="m6 6 12 12M6 18 18 6"/>,
     shield:<><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6l8-4Z"/><path d="m8 12 3 3 5-6"/></>,
   };
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]??paths.info}</svg>;
