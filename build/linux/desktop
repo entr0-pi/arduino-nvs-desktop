@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=ESP32 NVS Key-Pair Manager
+Comment=Manage GNSS ESP32 configuration over USB
+# The Exec line includes %u to pass the URL to the application
+Exec=/usr/local/bin/esp32-nvs-manager %u
+Terminal=false
+Type=Application
+Icon=esp32-nvs-manager
+Categories=Utility;
+StartupWMClass=esp32-nvs-manager
+
+ 

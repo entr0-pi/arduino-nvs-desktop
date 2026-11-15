@@ -1,0 +1,52 @@
+# IDE / agents
+.vscode/
+.idea/
+.claude/
+.kilocode/
+
+# Go / Wails build output
+bin/
+build/bin/
+*.syso
+*.exe
+.tools/
+.task/
+
+# Wails packaging output
+build/windows/nsis/*.exe
+build/windows/msix/*.msix
+build/linux/appimage/build/
+build/darwin/*.app
+
+# Frontend
+frontend/node_modules/
+frontend/dist/*
+!frontend/dist/.gitkeep
+*.tsbuildinfo
+npm-debug.log*
+
+# Firmware images
+*.bin
+*.elf
+
+# Environment / secrets
+.env
+.env.*
+.venv
+__pycache__
+*.pyc
+
+# Device configs (may hold Wi-Fi / NTRIP credentials); the .example is tracked
+/*.csv
+nvs-config*.json
+nvstest-backup-*.json
+nvstest-results/
+
+# Local cache
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
